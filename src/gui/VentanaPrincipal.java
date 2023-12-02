@@ -100,6 +100,7 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
         if (e.getSource() == this.botonSalir){
             // Cierra la ventana
             System.exit(0);
+            controlador.guardarDatos();
         }
     }
 }

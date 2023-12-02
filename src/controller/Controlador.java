@@ -21,10 +21,11 @@ public class Controlador {
 		this.cafeteria = this.gestorDeDatos.leerArchivoCafeteria(this.cafeteria,"cafeteria.txt", "cafes.txt");
 		this.ventanaPrincipal = new VentanaPrincipal(this);
 		this.guardarDatos();
-		System.out.println(" ================================= ");
+
 	}
 
 	public void guardarDatos() {
+		System.out.println(" ================================= ");
 		this.gestorDeDatos.borrarDatosArchivo("cafeteria.txt");
 		this.gestorDeDatos.borrarDatosArchivo("cafes.txt");
 		this.gestorDeDatos.registrarDato(this.cafeteria, "cafeteria.txt");

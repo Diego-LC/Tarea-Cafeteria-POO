@@ -110,6 +110,7 @@ public class VentanaEliminarCafe extends JFrame implements ActionListener {
             controlador.cafeteria.descontinuarCafe(cafeSeleccionado);
             ((DefaultListModel<String>) listResultado.getModel()).remove(selectedIndex);
             cafeSeleccionado = null; // resetea la selección
+            controlador.guardarDatos();
         } else {
             JOptionPane.showMessageDialog(this, "No hay café seleccionado para eliminar");
         }

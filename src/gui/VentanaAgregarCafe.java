@@ -120,6 +120,7 @@ public class VentanaAgregarCafe extends VentanaGeneral implements ActionListener
             }catch (Exception ex){
                 System.out.println("Error: " + ex.getMessage());
             }
+            controlador.guardarDatos();
             ventanaPrincipal.setVisible(true);
             // Opcional: oculta la ventana agregar café
             setVisible(false);

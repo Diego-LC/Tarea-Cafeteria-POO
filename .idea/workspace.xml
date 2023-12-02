@@ -9,13 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a582ff1-13a5-4d35-a862-0925f791a694" name="Changes" comment="VentanaMostrarCafes y VentanaAgregarCafe implementados">
+    <list default="true" id="3a582ff1-13a5-4d35-a862-0925f791a694" name="Changes" comment="VentanaBuscarCafe y VentanaEliminarCafe implementados">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/VentanaAgregarCafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaAgregarCafe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/VentanaBuscarCafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaBuscarCafe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/VentanaEliminarCafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaEliminarCafe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/VentanaGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaGeneral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +131,7 @@
       <workItem from="1701446632719" duration="108000" />
       <workItem from="1701446760802" duration="17713000" />
       <workItem from="1701472033293" duration="9954000" />
-      <workItem from="1701531084039" duration="8836000" />
+      <workItem from="1701531084039" duration="9221000" />
     </task>
     <task id="LOCAL-00001" summary="Comit inicial">
       <option name="closed" value="true" />
@@ -191,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701536455766</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="VentanaBuscarCafe y VentanaEliminarCafe implementados">
+      <option name="closed" value="true" />
+      <created>1701542272928</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701542272928</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +221,8 @@
     <MESSAGE value="metodo guardar archivos funcionando" />
     <MESSAGE value="metodo leer archivos archivos funcionando" />
     <MESSAGE value="VentanaMostrarCafes y VentanaAgregarCafe implementados" />
-    <option name="LAST_COMMIT_MESSAGE" value="VentanaMostrarCafes y VentanaAgregarCafe implementados" />
+    <MESSAGE value="VentanaBuscarCafe y VentanaEliminarCafe implementados" />
+    <option name="LAST_COMMIT_MESSAGE" value="VentanaBuscarCafe y VentanaEliminarCafe implementados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
