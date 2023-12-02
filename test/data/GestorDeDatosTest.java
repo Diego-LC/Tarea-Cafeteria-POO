@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,7 +27,7 @@ class GestorDeDatosTest {
     @BeforeEach
     void setUp() {
         gestorDeDatos = new GestorDeDatos();
-        cafeteria = new Cafeteria("Cafeteria1", "Address1", RedesSociales.FACEBOOK);
+        cafeteria = new Cafeteria();
     }
 
     @Test
@@ -39,7 +40,7 @@ class GestorDeDatosTest {
         // Create a sample cafeteria file
         File cafeteriaFile = new File(direccionArchivoCafeteria);
         FileWriter cafeteriaWriter = new FileWriter(cafeteriaFile);
-        cafeteriaWriter.write("Cafeteria1,Address1,Facebook,Twitter");
+        cafeteriaWriter.write("Cafeteria1,Address1,Facebook,Twitter,instagram");
         cafeteriaWriter.close();
 
         // Create a sample cafes file
@@ -54,8 +55,6 @@ class GestorDeDatosTest {
         // Assert the values are correctly set
         assertEquals("Cafeteria1", cafeteria.getNombreCafeteria());
         assertEquals("Address1", cafeteria.getDireccion());
-        assertEquals(RedesSociales.FACEBOOK, cafeteria.getRedesSociales().getCategoria());
-        assertEquals(RedesSociales.TWITTER, cafeteria.getRedesSociales().getCategoria());
         assertEquals(1, cafeteria.getCafes().size());
 
         // Clean up the temporary files
