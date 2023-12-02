@@ -10,7 +10,8 @@ public class Cafe {
 	private IngredientesOpcionales ingredientesOpcionales;
 	public Cafeteria cafeteria;
 
-	public Cafe(int gramosCafe, int mililitrosAgua, Tamaño tamaño) {
+	public Cafe(String nombre, int gramosCafe, int mililitrosAgua, Tamaño tamaño) {
+		this.nombre = nombre;
 		this.gramosCafe = gramosCafe;
 		this.mililitrosAgua = mililitrosAgua;
 		this.tamaño = tamaño;
@@ -62,5 +63,16 @@ public class Cafe {
 
 	public void setIngredientesOpcionales(IngredientesOpcionales ingredientesOpcionales) {
 		this.ingredientesOpcionales = ingredientesOpcionales;
+	}
+
+	@Override
+	public String toString() {
+		String result = this.nombre + "," + this.gramosCafe + "," + this.mililitrosAgua+ "," + this.tamaño.getCategoria();
+		if (this.ingredientesOpcionales != null) {
+			result = result + "," + this.ingredientesOpcionales.getIngrediente();
+		}else{
+			result = result + "," + "null";
+		}
+		return result;
 	}
 }

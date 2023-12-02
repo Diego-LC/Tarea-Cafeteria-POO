@@ -4,7 +4,7 @@ import model.*;
 import java.io.*;
 
 public class GestorDeDatos {
-    public void leerArchivoCafeteria(Cafeteria cafeteria, String direccionArchivoCafeteria, String direccionArchivoCafes) {
+    public Cafeteria leerArchivoCafeteria(Cafeteria cafeteria, String direccionArchivoCafeteria, String direccionArchivoCafes) {
         String textoArchivo = "";
         try {
             File archivo = new File(direccionArchivoCafeteria);
@@ -12,12 +12,15 @@ public class GestorDeDatos {
             BufferedReader br = new BufferedReader(fr);
             //Lee cada línea del archivo hasta que la línea sea nula
             while((textoArchivo = br.readLine()) != null){
-				String[] data = textoArchivo.split(",");
-				cafeteria.setNombreCafeteria(data[0]);
-				cafeteria.setDireccion(data[1]);
-				cafeteria.setRedesSociales(RedesSociales.valueOf(data[2]));
-				cafeteria.setRedesSociales(RedesSociales.valueOf(data[3]));
-				leerArchivoCafes(cafeteria, direccionArchivoCafes);
+                String[] data = textoArchivo.split(",");
+                cafeteria.setNombreCafeteria(data[0]);
+                cafeteria.setDireccion(data[1]);
+                cafeteria.setRedesSociales(new RedesSociales[] {
+                        RedesSociales.valueOf(data[2]),
+                        RedesSociales.valueOf(data[3]),
+                        RedesSociales.valueOf(data[4])
+                });
+                leerArchivoCafes(cafeteria, direccionArchivoCafes);
             }
             br.close();
             FileWriter fw = new FileWriter(archivo);
@@ -26,9 +29,10 @@ public class GestorDeDatos {
         } catch (Exception e) {
             System.out.println("Documento no disponible, favor contactar con administrador");
         }
+        return cafeteria;
     }
 
-    public Cafeteria leerArchivoCafes(Cafeteria cafeteria, String direccionArchivo) {
+    private Cafeteria leerArchivoCafes(Cafeteria cafeteria, String direccionArchivo) {
         String textoArchivo = "";
         try {
             File archivo = new File(direccionArchivo);
@@ -43,7 +47,7 @@ public class GestorDeDatos {
                         Integer.parseInt(data[1]),
                         Integer.parseInt(data[2]),
                         Tamaño.valueOf(data[3]),
-						ingredientes));
+                        ingredientes));
             }
             FileWriter fw = new FileWriter(archivo);
             BufferedWriter bw = new BufferedWriter(fw); // Limpia el archivo
@@ -70,6 +74,7 @@ public class GestorDeDatos {
                 bw.newLine();
             }
             bw.write(objeto.toString());
+            System.out.println("Guardado: " + objeto.toString());
             bw.close();
             return true;
         } catch (Exception e) {

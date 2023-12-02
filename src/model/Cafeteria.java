@@ -5,13 +5,16 @@ import java.util.ArrayList;
 public class Cafeteria {
 	private String nombreCafeteria;
 	private String direccion;
-	private RedesSociales redesSociales;
+	private RedesSociales[] redesSociales;
 	private ArrayList<Cafe> cafes;
 
-	public Cafeteria(String nombreCafeteria, String direccion, RedesSociales redesSociales) {
+	public Cafeteria(String nombreCafeteria, String direccion) {
 		this.nombreCafeteria = nombreCafeteria;
 		this.direccion = direccion;
-		this.redesSociales = redesSociales;
+		this.cafes = new ArrayList<Cafe>();
+	}
+
+	public Cafeteria() {
 	}
 
 	public String getNombreCafeteria() {
@@ -30,11 +33,11 @@ public class Cafeteria {
 		this.direccion = direccion;
 	}
 
-	public RedesSociales getRedesSociales() {
+	public RedesSociales[] getRedesSociales() {
 		return redesSociales;
 	}
 
-	public void setRedesSociales(RedesSociales redesSociales) {
+	public void setRedesSociales(RedesSociales[] redesSociales) {
 		this.redesSociales = redesSociales;
 	}
 
@@ -47,7 +50,10 @@ public class Cafeteria {
 	}
 
 	public void agregarNuevoCafe(String nombre, int gramos, int agua, Tamaño tamaño, IngredientesOpcionales ingredientes) {
-		Cafe cafe = new Cafe(nombre, gramos, agua, tamaño, ingredientes);
+		Cafe cafe = new Cafe(nombre, gramos, agua, tamaño);
+		if (ingredientes != null) {
+			cafe.setIngredientesOpcionales(ingredientes);
+		}
 		this.cafes.add(cafe);
 	}
 
@@ -63,5 +69,10 @@ public class Cafeteria {
 
 	public boolean descontinuarCafe(Cafe cafe) {
 		return this.cafes.remove(cafe);
+	}
+
+	@Override
+	public String toString() {
+		return this.nombreCafeteria + "," + this.direccion + "," + this.redesSociales[0].getCategoria() + "," + this.redesSociales[1].getCategoria() + "," + this.redesSociales[2].getCategoria();
 	}
 }

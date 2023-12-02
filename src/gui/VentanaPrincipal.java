@@ -12,6 +12,7 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
     private JButton botonAgregarCafe;
     private JButton botonBuscarCafe;
     private JButton botonEliminarCafe;
+    private JButton botonSalir;
 
     public VentanaPrincipal(Controlador controlador) {
         super("Ventana Principal", 500, 500);
@@ -25,6 +26,7 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
         this.generarBotonAgregarCafe();
         this.generarBotonBuscarCafe();
         this.generarBotonEliminarCafe();
+        this.generarBotonSalir();
     }
 
     private void generarBotonMostrarCafes() {
@@ -55,16 +57,24 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
         this.botonEliminarCafe.addActionListener(this);
     }
 
+    private void generarBotonSalir() {
+        JButton btnSalir = super.generarBoton("Salir", 100, 350, 300, 50);
+        this.botonSalir = btnSalir;
+        this.add(btnSalir);
+        this.botonSalir.addActionListener(this);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.botonMostrarCafes) {
             // Mostrar la lista de cafés asociados
-            controlador.mostrarCafes();
+            VentanaMostrarCafes ventMostrarCafes = new VentanaMostrarCafes(VentanaPrincipal.this, this.controlador);
+            ventMostrarCafes.setVisible(true);
         }
 
         if (e.getSource() == this.botonAgregarCafe) {
             // Crear una nueva instancia de VentanaAgregarCafe y mostrarla
-            VentanaAgregarCafe ventanaAgregarCafe = new VentanaAgregarCafe(VentanaPrincipal.this);
+            VentanaAgregarCafe ventanaAgregarCafe = new VentanaAgregarCafe(VentanaPrincipal.this, this.controlador);
             ventanaAgregarCafe.setVisible(true);
             // Opcional: ocultar la ventana principal
             setVisible(false);
@@ -73,6 +83,7 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
         if (e.getSource() == this.botonBuscarCafe) {
             // Crear una nueva instancia de VentanaBuscarCafe y mostrarla
             VentanaBuscarCafe ventanaBuscarCafe = new VentanaBuscarCafe(controlador, VentanaPrincipal.this);
+            ventanaBuscarCafe.pack();
             ventanaBuscarCafe.setVisible(true);
             // Opcional: ocultar la ventana principal
             setVisible(false);
@@ -84,6 +95,11 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
             ventanaEliminarCafe.setVisible(true);
             // Opcional: ocultar la ventana principal
             setVisible(false);
+        }
+
+        if (e.getSource() == this.botonSalir){
+            // Cierra la ventana
+            System.exit(0);
         }
     }
 }
