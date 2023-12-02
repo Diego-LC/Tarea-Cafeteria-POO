@@ -69,13 +69,12 @@ public class VentanaAgregarCafe extends VentanaGeneral implements ActionListener
     }
 
     private void generarListaDesplegableTamaño() {
-        JComboBox comboBox = super.generarListaDesplegable(100, 270, 300, 30);
-        this.comboBoxTamaño = comboBox;
-        this.add(comboBox);
+        this.comboBoxTamaño = super.generarListaDesplegable(100, 270, 300, 30);
+        this.add(this.comboBoxTamaño);
         for (Tamaño tamaño : Tamaño.values()) {
-            comboBox.addItem(tamaño);
+            this.comboBoxTamaño.addItem(tamaño);
         }
-        comboBox.addActionListener(this);
+        this.comboBoxTamaño.addActionListener(this);
     }
 
     private void generarListaDesplegableIngredientesOpcionales() {

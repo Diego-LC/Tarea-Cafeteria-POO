@@ -9,17 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a582ff1-13a5-4d35-a862-0925f791a694" name="Changes" comment="metodo leer archivos archivos funcionando">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/VentanaBuscarCafe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/VentanaEliminarCafe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/VentanaMostrarCafes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/mainCafeteria_jar.xml" beforeDir="false" />
+    <list default="true" id="3a582ff1-13a5-4d35-a862-0925f791a694" name="Changes" comment="VentanaMostrarCafes y VentanaAgregarCafe implementados">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/GestorDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/GestorDeDatos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/VentanaAgregarCafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaAgregarCafe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/VentanaBuscarCafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaBuscarCafe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/VentanaEliminarCafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaEliminarCafe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/VentanaGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/VentanaGeneral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data/GestorDatosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/GestorDeDatosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,34 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "openjdk-20",
-    "last_directory_selection": "E:/IdeaProjects/mainCafeteria/src/test",
-    "last_opened_file_path": "E:/IdeaProjects/Tarea-CafeteriaPOO/src/gui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.21149425",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;desarrollo&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
+    &quot;last_directory_selection&quot;: &quot;E:/IdeaProjects/mainCafeteria/src/test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IdeaProjects/Tarea-CafeteriaPOO/src/gui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.21149425&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="gui" />
@@ -105,6 +101,21 @@
       <recent name="model" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="mainCafeteria" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="mainCafeteria" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -122,6 +133,7 @@
       <workItem from="1701446632719" duration="108000" />
       <workItem from="1701446760802" duration="17713000" />
       <workItem from="1701472033293" duration="9954000" />
+      <workItem from="1701531084039" duration="8836000" />
     </task>
     <task id="LOCAL-00001" summary="Comit inicial">
       <option name="closed" value="true" />
@@ -171,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701481425327</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="VentanaMostrarCafes y VentanaAgregarCafe implementados">
+      <option name="closed" value="true" />
+      <created>1701536455766</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701536455766</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,16 +214,12 @@
     <MESSAGE value="implementado ventanaPrincipal y VentanaAgregarCafe" />
     <MESSAGE value="metodo guardar archivos funcionando" />
     <MESSAGE value="metodo leer archivos archivos funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="metodo leer archivos archivos funcionando" />
+    <MESSAGE value="VentanaMostrarCafes y VentanaAgregarCafe implementados" />
+    <option name="LAST_COMMIT_MESSAGE" value="VentanaMostrarCafes y VentanaAgregarCafe implementados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/data/GestorDeDatos.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/data/GestorDeDatosTest.java</url>
           <line>52</line>
@@ -211,5 +227,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="javax.swing.table.DefaultTableModel" memberName="dataVector" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
