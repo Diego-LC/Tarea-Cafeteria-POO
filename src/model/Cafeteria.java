@@ -15,6 +15,7 @@ public class Cafeteria {
 	}
 
 	public Cafeteria() {
+		this.cafes = new ArrayList<Cafe>();
 	}
 
 	public String getNombreCafeteria() {
