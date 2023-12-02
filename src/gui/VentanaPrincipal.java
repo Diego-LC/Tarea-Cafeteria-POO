@@ -15,7 +15,8 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
     private JButton botonSalir;
 
     public VentanaPrincipal(Controlador controlador) {
-        super("Ventana Principal", 500, 500);
+        super("Ventana Principal");
+        super.setSize(500, 500);
         this.controlador = controlador;
         this.generarElementos();
     }
@@ -58,7 +59,7 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
     }
 
     private void generarBotonSalir() {
-        JButton btnSalir = super.generarBoton("Salir", 100, 350, 300, 50);
+        JButton btnSalir = super.generarBoton("Salir", 100, 370, 300, 50);
         this.botonSalir = btnSalir;
         this.add(btnSalir);
         this.botonSalir.addActionListener(this);
@@ -83,7 +84,6 @@ public class VentanaPrincipal extends VentanaGeneral implements ActionListener {
         if (e.getSource() == this.botonBuscarCafe) {
             // Crear una nueva instancia de VentanaBuscarCafe y mostrarla
             VentanaBuscarCafe ventanaBuscarCafe = new VentanaBuscarCafe(controlador, VentanaPrincipal.this);
-            ventanaBuscarCafe.pack();
             ventanaBuscarCafe.setVisible(true);
             // Opcional: ocultar la ventana principal
             setVisible(false);

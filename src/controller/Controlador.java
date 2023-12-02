@@ -12,9 +12,9 @@ public class Controlador {
 	private GestorDeDatos gestorDeDatos;
 
 	public Controlador() {
-		this.ventanaPrincipal = new VentanaPrincipal(this);
 		this.gestorDeDatos = new GestorDeDatos();
 		this.cafeteria = new Cafeteria();
+		this.iniciarSistema();
 	}
 
 	public void iniciarSistema() {

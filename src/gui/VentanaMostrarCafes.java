@@ -6,6 +6,7 @@ import model.Cafe;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,10 +16,14 @@ public class VentanaMostrarCafes extends VentanaGeneral implements ActionListene
     private JButton botonOk;
 
     public VentanaMostrarCafes(VentanaPrincipal ventanaPrincipal, Controlador controlador) {
-        super("Cafes", 300,300);
+        super("Cafes");
+        super.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.VentanaPrincipal = ventanaPrincipal;
         this.controlador = controlador;
+        this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
         this.generarElementos();
+        //this.setSize(500,400);
+        this.pack();
     }
 
     private void generarElementos() {
@@ -26,12 +31,15 @@ public class VentanaMostrarCafes extends VentanaGeneral implements ActionListene
         this.generarDatosEnTabla();
         this.generarBotonOk();
     }
+
     private void generarDatosEnTabla() {
         Object[] items = super.generarTabla();
         JTable tabla = (JTable) items[0];
         JPanel panel = (JPanel) items[1];
         tabla.setModel(this.generarModeloTabla());
-        panel.add(tabla);
+        this.add(panel);
+        /*tabla.revalidate();
+        tabla.repaint();*/
     }
 
     private DefaultTableModel generarModeloTabla() {
@@ -48,26 +56,39 @@ public class VentanaMostrarCafes extends VentanaGeneral implements ActionListene
     private void añadirFilas(DefaultTableModel modelo) {
         try{
             for (Cafe cafe : this.controlador.cafeteria.getCafes()) {
-                modelo.addRow(new Object[]{
-                        cafe.getNombre(),
-                        cafe.getMililitrosAgua(),
-                        cafe.getGramosCafe(),
-                        cafe.getTamaño(),
-                        cafe.getIngredientesOpcionales()
-                });
+                if (cafe.getIngredientesOpcionales() != null){
+                    modelo.addRow(new Object[]{
+                            cafe.getNombre(),
+                            cafe.getMililitrosAgua(),
+                            cafe.getGramosCafe(),
+                            cafe.getTamaño().getCategoria(),
+                            cafe.getIngredientesOpcionales().getIngrediente()
+                    });
+                }else {
+                    modelo.addRow(new Object[]{
+                            cafe.getNombre(),
+                            cafe.getMililitrosAgua(),
+                            cafe.getGramosCafe(),
+                            cafe.getTamaño().getCategoria(),
+                            " "});
+                }
             }
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println("L76: VentanaMostrarCafes error: " + e.getMessage());
         }
     }
 
     private void generarBotonOk() {
-        JButton buttonOk = super.generarBoton("Ok", 100, 200, 300, 50);
-        this.botonOk = buttonOk;
-        this.add(buttonOk);
-        botonOk.addActionListener(this);
+        this.botonOk = super.generarBoton("Ok", 100, 20, 100, 30);
+        this.botonOk.addActionListener(this);
+        Box box = Box.createHorizontalBox();
+        box.add(Box.createHorizontalGlue());
+        box.add(botonOk);
+        box.add(Box.createHorizontalGlue());
+        this.add(Box.createVerticalGlue());
+        this.add(box);
+        this.add(Box.createVerticalGlue());
     }
-
 
     public void setVisible(boolean b) {
         super.setVisible(b);

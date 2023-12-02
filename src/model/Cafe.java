@@ -17,14 +17,6 @@ public class Cafe {
 		this.tamaño = tamaño;
 	}
 
-	public Cafe(String nombre, int gramosCafe, int mililitrosAgua, Tamaño tamaño, IngredientesOpcionales ingredientesOpcionales) {
-		this.nombre = nombre;
-		this.gramosCafe = gramosCafe;
-		this.mililitrosAgua = mililitrosAgua;
-		this.tamaño = tamaño;
-		this.ingredientesOpcionales = ingredientesOpcionales;
-	}
-
 	public String getNombre() {
 		return nombre;
 	}
