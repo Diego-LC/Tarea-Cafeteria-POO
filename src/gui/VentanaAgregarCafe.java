@@ -8,8 +8,9 @@ import model.Tamaño;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class VentanaAgregarCafe extends VentanaGeneral {
+public class VentanaAgregarCafe extends VentanaGeneral implements ActionListener {
     private Controlador controlador;
     private VentanaPrincipal ventanaPrincipal;
     private JTextField textFieldNombreCafe;
@@ -20,9 +21,10 @@ public class VentanaAgregarCafe extends VentanaGeneral {
     private JButton botonAgregarCafe;
     private JButton botonVolver;
 
-    public VentanaAgregarCafe(VentanaPrincipal ventanaPrincipal) {
+    public VentanaAgregarCafe(VentanaPrincipal ventanaPrincipal,Controlador controlador) {
         super("Ventana Café", 500, 500);
         this.ventanaPrincipal = ventanaPrincipal;
+        this.controlador = controlador;
         this.generarElementos();
     }
 
@@ -108,8 +110,9 @@ public class VentanaAgregarCafe extends VentanaGeneral {
             int gramosCafe = gramos.isEmpty() ? 0 : Integer.parseInt(gramos);
             Tamaño tamaño = (Tamaño) comboBoxTamaño.getSelectedItem();
             IngredientesOpcionales ingredientesOpcionales = (IngredientesOpcionales) comboBoxIngredientesOpcionales.getSelectedItem();
+
             Cafe cafe = new Cafe(nombreCafe, gramosCafe, mililitrosAgua, tamaño, ingredientesOpcionales);
-            controlador.cafeteria.agregarNuevoCafe(nombreCafe, gramosCafe, mililitrosAgua, tamaño, ingredientesOpcionales);
+            this.controlador.cafeteria.agregarNuevoCafe(nombreCafe, gramosCafe, mililitrosAgua, tamaño, ingredientesOpcionales);
             ventanaPrincipal.setVisible(true);
             // Opcional: oculta la ventana agregar café
             setVisible(false);

@@ -30,7 +30,7 @@ public class GestorDeDatos {
         return cafeteria;
     }
 
-    private void leerArchivoCafes(Cafeteria cafeteria, String direccionArchivo) {
+    protected void leerArchivoCafes(Cafeteria cafeteria, String direccionArchivo) {
         String textoArchivo = "";
         try {
             File archivo = new File(direccionArchivo);

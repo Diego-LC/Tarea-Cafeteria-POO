@@ -5,6 +5,7 @@ import javax.swing.text.InternationalFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class VentanaGeneral extends JFrame implements ActionListener{
     private final Font fuenteTitulo;
@@ -75,6 +76,14 @@ public class VentanaGeneral extends JFrame implements ActionListener{
         JComboBox lista= new JComboBox();
         lista.setBounds(posicionX, posicionY, largoX, largoY);
         return lista;
+    }
+    protected Object[] generarTabla(){
+        JTable tabla = new JTable();
+        JScrollPane scrollPane= new JScrollPane(tabla);
+        tabla.setFillsViewportHeight(true);
+        JPanel panel= new JPanel(new BorderLayout());
+        panel.add(scrollPane, BorderLayout.CENTER);
+        return new Object[]{tabla, panel};
     }
 
     @Override
